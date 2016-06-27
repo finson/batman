@@ -20,9 +20,7 @@ let builderSwitches = {
 
 let itemSwitches = {
   board: '-fqbn',
-  tools: '-sketch',
-  libraries: '-libraries',
-  sketch: ''
+  libraries: '-libraries'
 };
 
 class BldMan extends EventEmitter {
@@ -31,46 +29,41 @@ class BldMan extends EventEmitter {
     super();
   }
 
-  buildit(action, item) {
+/**
+ * Given two objects containing various options for the build, this method
+ * constructs the OS command to perform the build.
+ * @param  {object} action options that define the context for the builder
+ * @param  {object} item   options that define the package being built and its target environment
+ * @return {string}        the OS command string to run for the build
+ */
+  buildCommand(action, item) {
 
     let partA = action.cmd;
 
     for (let s of ['hardware', 'tools', 'libraries']) {
-      if (Array.isArray(action[s])) {
-        log.debug(`action: ${s} : ${action[s]}`);
-        for (let v of action[s]) {
-          partA += ' ';
-          partA += builderSwitches[s];
-          partA += '=';
-          partA += v;
+      let values = (Array.isArray(action[s])) ? action[s] : [action[s]];
+      log.debug(`action: ${s} : ${values}`);
+      for (let v of values) {
+        if (v.length > 0) {
+          partA += ' ' + builderSwitches[s] + '=' + v;
         }
-      } else {
-        partA += ' ';
-        partA += builderSwitches[s];
-        partA += '=';
-        partA += action[s];
       }
     }
 
     let partB = '';
-    for (let s of ['board','libraries','sketch']) {
-      if (Array.isArray(item[s])) {
-        log.debug(`action: ${s} : ${action[s]}`);
-        for (let v of item[s]) {
-          partB += ' ';
-          partB += itemSwitches[s];
-          partB += '=';
-          partB += v;
+    for (let s of ['board','libraries']) {
+      let values = (Array.isArray(item[s])) ? item[s] : [item[s]];
+      log.debug(`item: ${s} : ${values}`);
+      for (let v of values) {
+        if (v.length > 0) {
+          partB += ' ' + itemSwitches[s] + '=' + v;
         }
-      } else {
-        partB += ' ';
-        partB += itemSwitches[s];
-        partB += '=';
-        partB += item[s];
       }
     }
-    log.info(partA);
-    log.info(partB);
+
+    partB += ' ' + item.sketch;
+
+    return partA + partB;
   }
 }
 
@@ -129,5 +122,5 @@ let builder = {
 };
 
 let bat = new BldMan();
-bat.buildit(builder,buildable);
-
+let osCmd = bat.buildCommand(builder,buildable);
+log.info(osCmd);
