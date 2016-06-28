@@ -14,8 +14,9 @@ log.setLevel('DEBUG');
 let builder = {
   cmd: "arduino-builder",
   options: {'debug-level': '5'},
-  hardware: ['C:/PROGRA~2/Arduino/hardware'],
-  tools: ['C:/PROGRA~2/Arduino/hardware/tools/avr','C:/PROGRA~2/Arduino/tools-builder'],
+  hardware: ['C:/PROGRA~2/Arduino/hardware','C:/Users/finson/AppData/Local/Arduino15/packages'],
+  tools: ['C:/PROGRA~2/Arduino/hardware/tools/avr','C:/PROGRA~2/Arduino/tools-builder',
+  'C:/Users/finson/AppData/Local/Arduino15/packages'],
   libraries: [],
   target: 'e:/users/finson/repos/batman/bldtgt'
 };
