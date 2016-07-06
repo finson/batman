@@ -97,7 +97,14 @@ class BldMan extends EventEmitter {
       let partC = ' '+ item.repoRoot + '/' + action.user + '/' + r.name + '/zipball/master';
       let partD = ' > ' +  action.out + '/' + r.name + '.zip';
       result.push(partA+partB+partC+partD);
-      result.push('c:/PROGRA~1/7-zip/7z -y x ' + action.out + '/' + r.name + '.zip');
+
+      let unzip = 'c:/PROGRA~1/7-zip/7z';
+      unzip += ' -y -o' + action.out;
+      unzip += ' x ' + action.out + '/' + r.name + '.zip';
+      result.push(unzip);
+
+      let erase = 'rm ' + action.out + '/' + r.name + '.zip';
+      result.push(erase);
     }
     return result;
   }

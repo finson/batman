@@ -6,6 +6,8 @@
 # Folders
 node_modules
 bldtgt
+libraries
+CMakeFiles
 
 
 # =========================
