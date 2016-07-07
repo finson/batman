@@ -18,8 +18,6 @@ if(EXISTS  ${CMAKE_CURRENT_LIST_DIR}/Platform/Arduino.cmake)
     set(CMAKE_MODULE_PATH  ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_LIST_DIR})
 endif()
 
-message(STATUS " MOD PTH  " ${CMAKE_MODULE_PATH})
-
 #=============================================================================#
 #                         System Paths                                        #
 #=============================================================================#
@@ -40,9 +38,6 @@ endif()
 #=============================================================================#
 #                         Detect Arduino SDK                                  #
 #=============================================================================#
-
-set( ARDUINO_SDK_PATH "")
-message(STATUS " ARD SDK  " ${ARDUINO_SDK_PATH})
 
 if(NOT ARDUINO_SDK_PATH)
     set(ARDUINO_PATHS)
@@ -76,11 +71,7 @@ if(NOT ARDUINO_SDK_PATH)
     list(REVERSE SDK_PATH_HINTS)
 endif()
 
-message(STATUS " SDK HNTS " ${SDK_PATH_HINTS})
-message(STATUS " ARD PTHS " ${ARDUINO_PATHS})
-message(STATUS " ARD SDK  " ${ARDUINO_SDK_PATH})
-
-find_path(DWJ_ARDUINO_SDK_PATH
+find_path(ARDUINO_SDK_PATH
           NAMES lib/version.txt
           PATH_SUFFIXES share/arduino
                         Arduino.app/Contents/Java/
@@ -88,10 +79,6 @@ find_path(DWJ_ARDUINO_SDK_PATH
                         ${ARDUINO_PATHS}
           HINTS ${SDK_PATH_HINTS}
           DOC "Arduino SDK path.")
-
-message(STATUS " DWJ SDK  " ${DWJ_ARDUINO_SDK_PATH})
-set(ARDUINO_SDK_PATH ${DWJ_ARDUINO_SDK_PATH})
-message(STATUS " ARD SDK  " ${ARDUINO_SDK_PATH})
 
 if(ARDUINO_SDK_PATH)
     list(APPEND CMAKE_SYSTEM_PREFIX_PATH ${ARDUINO_SDK_PATH}/hardware/tools/avr)

@@ -14,12 +14,11 @@ cmake_minimum_required(VERSION 3.5)
 # set(ARDUINO_CPU 16MHzatmega328)
 
 set(CMAKE_TOOLCHAIN_FILE cmake/ArduinoToolchain.cmake)
-message(STATUS " Gen      " ${CMAKE_GENERATOR})
 
 project(ArduinoFirmware C CXX)
 
-print_board_list()
-print_programmer_list()
+#print_board_list()
+#print_programmer_list()
 
 # add system libraries to project
 link_directories(${ARDUINO_SDK}/libraries)

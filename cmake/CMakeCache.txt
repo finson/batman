@@ -54,17 +54,20 @@ ARDUINO_OBJCOPY_HEX_FLAGS:STRING=-O;ihex;-R;.eeprom
 //Path to Arduino programmers definition file.
 ARDUINO_PROGRAMMERS_PATH:FILEPATH=ARDUINO_PROGRAMMERS_PATH-NOTFOUND
 
+//Arduino SDK path.
+ARDUINO_SDK_PATH:PATH=C:/apps/Arduino
+
 //Arduino SDK Version
-ARDUINO_SDK_VERSION:STRING=
+ARDUINO_SDK_VERSION:STRING=1.6.9
 
 //Arduino SDK Major Version
-ARDUINO_SDK_VERSION_MAJOR:STRING=
+ARDUINO_SDK_VERSION_MAJOR:STRING=1
 
 //Arduino SDK Minor Version
-ARDUINO_SDK_VERSION_MINOR:STRING=
+ARDUINO_SDK_VERSION_MINOR:STRING=6
 
 //Arduino SDK Patch Version
-ARDUINO_SDK_VERSION_PATCH:STRING=
+ARDUINO_SDK_VERSION_PATCH:STRING=9
 
 //Path to directory containing the Arduino variant sources.
 ARDUINO_VARIANTS_PATH:FILEPATH=ARDUINO_VARIANTS_PATH-NOTFOUND
@@ -108,12 +111,6 @@ BLINKER_BINARY_DIR:STATIC=E:/users/finson/repos/batman/cmake/src/main/Blink
 
 //Value Computed by CMake
 BLINKER_SOURCE_DIR:STATIC=E:/users/finson/repos/batman/src/main/Blink
-
-//Value Computed by CMake
-BlinkLuni_BINARY_DIR:STATIC=E:/users/finson/repos/batman/cmake/src/main/Blink
-
-//Value Computed by CMake
-BlinkLuni_SOURCE_DIR:STATIC=E:/users/finson/repos/batman/src/main/Blink
 
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-ar.exe
@@ -224,17 +221,11 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Path to a program.
 CMAKE_STRIP:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-strip.exe
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=E:/users/finson/repos/batman/cmake/ArduinoToolchain.cmake
-
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
-
-//Arduino SDK path.
-DWJ_ARDUINO_SDK_PATH:PATH=C:/apps/Arduino
 
 //Dependencies for target
 uno_CORE_LIB_DEPENDS:STATIC=
@@ -267,7 +258,7 @@ ARDUINO_OBJCOPY_HEX_FLAGS-ADVANCED:INTERNAL=1
 //A list of registered platforms
 ARDUINO_PLATFORMS:INTERNAL=ARDUINO;AVR
 //The path to ARDUINO
-ARDUINO_PLATFORM_PATH:INTERNAL=DWJ_ARDUINO_SDK_PATH/hardware/arduino
+ARDUINO_PLATFORM_PATH:INTERNAL=C:/apps/Arduino/hardware/arduino
 //ADVANCED property for variable: ARDUINO_PROGRAMMERS_PATH
 ARDUINO_PROGRAMMERS_PATH-ADVANCED:INTERNAL=1
 //Arduino Size Script
