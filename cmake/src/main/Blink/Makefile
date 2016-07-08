@@ -216,6 +216,39 @@ BLINKER-size\fast:
 	cd E:\users\finson\repos\batman\cmake\src\main\Blink
 .PHONY : BLINKER-size\fast
 
+BLINKER_Blink.ino.obj: BLINKER_Blink.ino.cpp.obj
+
+.PHONY : BLINKER_Blink.ino.obj
+
+# target to build an object file
+BLINKER_Blink.ino.cpp.obj:
+	cd E:\users\finson\repos\batman\cmake
+	$(MAKE) -f src\main\Blink\CMakeFiles\BLINKER.dir\build.make /nologo -$(MAKEFLAGS) src\main\Blink\CMakeFiles\BLINKER.dir\BLINKER_Blink.ino.cpp.obj
+	cd E:\users\finson\repos\batman\cmake\src\main\Blink
+.PHONY : BLINKER_Blink.ino.cpp.obj
+
+BLINKER_Blink.ino.i: BLINKER_Blink.ino.cpp.i
+
+.PHONY : BLINKER_Blink.ino.i
+
+# target to preprocess a source file
+BLINKER_Blink.ino.cpp.i:
+	cd E:\users\finson\repos\batman\cmake
+	$(MAKE) -f src\main\Blink\CMakeFiles\BLINKER.dir\build.make /nologo -$(MAKEFLAGS) src\main\Blink\CMakeFiles\BLINKER.dir\BLINKER_Blink.ino.cpp.i
+	cd E:\users\finson\repos\batman\cmake\src\main\Blink
+.PHONY : BLINKER_Blink.ino.cpp.i
+
+BLINKER_Blink.ino.s: BLINKER_Blink.ino.cpp.s
+
+.PHONY : BLINKER_Blink.ino.s
+
+# target to generate assembly for a file
+BLINKER_Blink.ino.cpp.s:
+	cd E:\users\finson\repos\batman\cmake
+	$(MAKE) -f src\main\Blink\CMakeFiles\BLINKER.dir\build.make /nologo -$(MAKEFLAGS) src\main\Blink\CMakeFiles\BLINKER.dir\BLINKER_Blink.ino.cpp.s
+	cd E:\users\finson\repos\batman\cmake\src\main\Blink
+.PHONY : BLINKER_Blink.ino.cpp.s
+
 C_\apps\Arduino\hardware\arduino\avr\cores\arduino\CDC.obj: C_\apps\Arduino\hardware\arduino\avr\cores\arduino\CDC.cpp.obj
 
 .PHONY : C_\apps\Arduino\hardware\arduino\avr\cores\arduino\CDC.obj
@@ -1021,6 +1054,9 @@ help:
 	@echo ... BLINKER-size
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... BLINKER_Blink.ino.obj
+	@echo ... BLINKER_Blink.ino.i
+	@echo ... BLINKER_Blink.ino.s
 	@echo ... C_/apps/Arduino/hardware/arduino/avr/cores/arduino/CDC.obj
 	@echo ... C_/apps/Arduino/hardware/arduino/avr/cores/arduino/CDC.i
 	@echo ... C_/apps/Arduino/hardware/arduino/avr/cores/arduino/CDC.s

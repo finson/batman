@@ -15,7 +15,8 @@ cmake_minimum_required(VERSION 3.5)
 
 set(CMAKE_TOOLCHAIN_FILE cmake/ArduinoToolchain.cmake)
 
-project(ArduinoFirmware C CXX)
+project(BLINKER C CXX)
+set(${PROJECT_NAME}_BOARD uno)
 
 #print_board_list()
 #print_programmer_list()

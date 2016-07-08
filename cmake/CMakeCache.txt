@@ -76,6 +76,9 @@ ARDUINO_VARIANTS_PATH:FILEPATH=ARDUINO_VARIANTS_PATH-NOTFOUND
 ARDUINO_VERSION_PATH:FILEPATH=C:/apps/Arduino/lib/version.txt
 
 //Path to a program.
+AVROBJCOPY_PROGRAM:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-objcopy.exe
+
+//Path to a program.
 AVRSIZE_PROGRAM:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-size.exe
 
 //List of detected Arduino Board configurations
@@ -101,19 +104,10 @@ AVR_PROGRAMMERS_PATH:FILEPATH=C:/apps/Arduino/hardware/arduino/avr/programmers.t
 AVR_VARIANTS_PATH:FILEPATH=C:/apps/Arduino/hardware/arduino/avr/variants
 
 //Value Computed by CMake
-ArduinoFirmware_BINARY_DIR:STATIC=E:/users/finson/repos/batman/cmake
+BLINKER_BINARY_DIR:STATIC=E:/users/finson/repos/batman/cmake
 
 //Value Computed by CMake
-ArduinoFirmware_SOURCE_DIR:STATIC=E:/users/finson/repos/batman
-
-//Value Computed by CMake
-BLINKER_BINARY_DIR:STATIC=E:/users/finson/repos/batman/cmake/src/main/Blink
-
-//Value Computed by CMake
-BLINKER_SOURCE_DIR:STATIC=E:/users/finson/repos/batman/src/main/Blink
-
-//Path to a program.
-CMAKE_AR:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-ar.exe
+BLINKER_SOURCE_DIR:STATIC=E:/users/finson/repos/batman
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
@@ -153,10 +147,7 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=-w -Os -Wl,--gc-sections
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=-w -Os -Wl,--gc-sections
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/ArduinoFirmware
-
-//Path to a program.
-CMAKE_LINKER:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-ld.exe
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/BLINKER
 
 //Program used to build from makefiles.
 CMAKE_MAKE_PROGRAM:STRING=nmake
@@ -171,20 +162,11 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=-w -Os -Wl,--gc-sections
 
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=-w -Os -Wl,--gc-sections
 
-//Path to a program.
-CMAKE_NM:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-nm.exe
-
-//Path to a program.
-CMAKE_OBJCOPY:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-objcopy.exe
-
-//Path to a program.
-CMAKE_OBJDUMP:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-objdump.exe
+//OBJCOPY Program for firmware convertion in hex
+CMAKE_OBJCOPY:PATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-objcopy.exe
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=ArduinoFirmware
-
-//Path to a program.
-CMAKE_RANLIB:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-ranlib.exe
+CMAKE_PROJECT_NAME:STATIC=BLINKER
 
 CMAKE_SHARED_LINKER_FLAGS:STRING=-w -Os -Wl,--gc-sections
 
@@ -217,9 +199,6 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 
 //Flags used by the linker during Release with Debug Info builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
-
-//Path to a program.
-CMAKE_STRIP:FILEPATH=C:/apps/Arduino/hardware/tools/avr/bin/avr-strip.exe
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -273,8 +252,6 @@ AVRSIZE_PROGRAM-ADVANCED:INTERNAL=1
 AVR_BOARDS-ADVANCED:INTERNAL=1
 //The path to AVR
 AVR_PLATFORM_PATH:INTERNAL=C:/apps/Arduino/hardware/arduino/avr
-//ADVANCED property for variable: CMAKE_AR
-CMAKE_AR-ADVANCED:INTERNAL=1
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=e:/users/finson/repos/batman/cmake
 //Major version of cmake used to create the current loaded cache
@@ -313,8 +290,6 @@ CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //Path to cache edit program executable.
 CMAKE_EDIT_COMMAND:INTERNAL=C:/apps/cmake/bin/cmake-gui.exe
-//Executable file format
-CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
 CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG
@@ -336,8 +311,6 @@ CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=E:/users/finson/repos/batman
-//ADVANCED property for variable: CMAKE_LINKER
-CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
 CMAKE_MAKE_PROGRAM-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS
@@ -350,16 +323,8 @@ CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_MODULE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_NM
-CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
 CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
-//ADVANCED property for variable: CMAKE_OBJCOPY
-CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_OBJDUMP
-CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_RANLIB
-CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //Path to CMake installation.
 CMAKE_ROOT:INTERNAL=C:/apps/cmake/share/cmake-3.5
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
@@ -386,8 +351,6 @@ CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_STRIP
-CMAKE_STRIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //A list of registered cores
