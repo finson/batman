@@ -1,0 +1,29 @@
+{
+  "author": "Doug Johnson <strix@whidbey.com>",
+  "dependencies": {
+    "path": ">=0.12",
+    "log4js": ">=0.6"
+  },
+  "description": "Javascript helper for testing Arduino apps using PlatformIO.",
+  "directories": {
+    "lib": "lib",
+    "doc": "doc",
+    "example": "examples"
+  },
+  "homepage": "https://github.com/finson-release/finson-release.github.io/wiki",
+  "keywords": [
+    "javascript",
+    "device",
+    "driver",
+    "Arduino"
+  ],
+  "license": "GPL-3.0",
+  "main": "./lib/batman.js",
+  "name": "batman",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/finson/batman.git"
+  },
+  "scripts": {},
+  "version": "0.1.0"
+}

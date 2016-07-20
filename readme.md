@@ -11,3 +11,18 @@ my particular needs, but I could not have gotten anywhere on this idea
 without the previous development described above.
 
 Doug Johnson (finson, finson-release) July 2016
+
+----
+
+input: 
+The top level sketch directory (eg batcave)
+A directory/repo formatted as an arduino library to define the tests (eg LuniTest)
+    library.properties, keywords.txt, readme.md
+    src/        any shims needed for testing
+    examples/   main programs to be built for this test exercise
+
+
+Each of the subdirectories under examples contains:
+    - .ino Arduino main file
+    - list of libraries to be installed prior to compile/link (in CMakeLists.txt?)
+    - 
