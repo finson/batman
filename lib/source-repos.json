@@ -1,0 +1,14 @@
+[ {
+  "url": "https://api.github.com/repos/finson/${repo}/zipball",
+  "repos": [
+    "arduino-base64",
+    "FirmataWithDeviceFeature",
+    "Luni",
+    "LuniTest"]
+  },
+
+{
+  "url": "https://api.github.com/repos/adamvr/${repo}/zipball",
+  "repos": ["arduino-base64"]
+  }
+]
